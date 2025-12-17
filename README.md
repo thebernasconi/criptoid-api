@@ -12,25 +12,25 @@ A **API Principal** do **CRIPTOID** expõe endpoints REST consumidos pelo Fronte
 
 ## Arquitetura (fluxograma)
 
-```mermaid
+``` mermaid
 flowchart LR
   FE[Frontend (Nginx + SPA)\n:8080] -->|HTTP /api/*| API[API Principal (FastAPI)\n:8000]
   API -->|HTTP| QS[API Secundária Quotes Service (Node)\n:9000]
   QS -->|HTTP| YF[API Externa: Yahoo Finance]
   API -->|SQL| PG[(PostgreSQL\n:5432)] 
-``` 
+```
 
 ## Repositórios do projeto
 
 Substitua SEU_USUARIO pelo seu usuário do GitHub:
 
-API Principal (este): https://github.com/SEU_USUARIO/criptoid-api
+API Principal (este): https://github.com/thebernasconi/criptoid-api
 
-Frontend: https://github.com/SEU_USUARIO/criptoid-frontend
+Frontend: https://github.com/thebernasconi/criptoid-frontend
 
-API Secundária (Quotes Service): https://github.com/SEU_USUARIO/criptoid-quotes-service
+API Secundária (Quotes Service): https://github.com/thebernasconi/criptoid-quotes-service
 
-Endpoints expostos (principais)
+## Endpoints expostos (principais)
 Saúde e documentação
 
 GET /health
@@ -85,7 +85,7 @@ http://criptoid-quotes:9000
 
 Dica: use um arquivo .env.example no repositório e nunca suba .env com segredos.
 
-Pré-requisitos
+## Pré-requisitos
 
 Docker Desktop instalado e funcionando
 
@@ -99,7 +99,7 @@ Portas livres no host:
 
 5432 (Postgres)
 
-Como rodar o projeto completo (sem docker compose)
+## Como rodar o projeto completo (sem docker compose)
 
 As instruções abaixo sobem todos os componentes para esta API funcionar de ponta a ponta.
 
@@ -134,7 +134,7 @@ docker run -d --name criptoid-quotes --network criptoid-net `
   criptoid-quotes-service
 
 
-Teste:
+## Teste:
 
 curl http://localhost:9000/health
 
@@ -173,7 +173,7 @@ A API Principal não consulta diretamente o Yahoo Finance. Ela chama a API Secun
 
 Cadastro: não é necessário para o MVP.
 
-Observação: o consumo é feito dentro do sistema (sem redirecionar o usuário para outro app).
+## Observação: o consumo é feito dentro do sistema (sem redirecionar o usuário para outro app).
 
 Troubleshooting (problemas comuns)
 Ver status
