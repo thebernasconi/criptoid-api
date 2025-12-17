@@ -17,8 +17,6 @@ A **API Principal** do **CRIPTOID** expõe endpoints REST consumidos pelo Fronte
 
 ## Repositórios do projeto
 
-Substitua SEU_USUARIO pelo seu usuário do GitHub:
-
 API Principal (este): https://github.com/thebernasconi/criptoid-api
 
 Frontend: https://github.com/thebernasconi/criptoid-frontend
