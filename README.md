@@ -10,15 +10,10 @@ A **API Principal** do **CRIPTOID** expõe endpoints REST consumidos pelo Fronte
 
 ---
 
-## Arquitetura (fluxograma)
+<img width="832" height="247" alt="image" src="https://github.com/user-attachments/assets/3bc25245-b417-4b29-a95c-640d9518f165" />
 
-``` mermaid
-flowchart LR
-  FE[Frontend (Nginx + SPA)\n:8080] -->|HTTP /api/*| API[API Principal (FastAPI)\n:8000]
-  API -->|HTTP| QS[API Secundária Quotes Service (Node)\n:9000]
-  QS -->|HTTP| YF[API Externa: Yahoo Finance]
-  API -->|SQL| PG[(PostgreSQL\n:5432)] 
-```
+
+## Arquitetura (fluxograma)
 
 ## Repositórios do projeto
 
